@@ -10,6 +10,28 @@
   .view-sub--2 {
     height: 60vh;
   }
+
+  .highlight-sect-title-con h1{
+    font-size: 8vw;
+  }
+
+  .t--each-spn{
+    font-weight: 600;
+    font-family: Hit-Cond;
+    font-size: 1.8vw;
+    color: var(--primary-color);
+    letter-spacing: 1px;
+  }
+  
+  .t--each-para{
+    width: 80%;
+    text-align: justify;
+    margin-bottom: 2vw;
+    color: var(--primary-color);
+    letter-spacing: 1px;
+    font-size: 1.6vw;
+    font-family: Hit-Cond;
+  }
 }
 
 @media only screen and (max-width: 425px) {
@@ -26,8 +48,8 @@
     padding: 2vw;
   }
 
-  .view-sub--2 {
-    height: 40vh;
+  .view-main--2 {
+    min-height: 80vh;
   }
 
   .section2-wrapper h1 {
@@ -38,5 +60,74 @@
     letter-spacing: 1px;
     /* background-color: slateblue; */
     /* margin-top: 5px; */
+  }
+
+
+  .highlight-sect-title-con h1{
+    font-size: 11vw;
+  }
+
+  .section3-data-wrapper{
+    padding: 0 2vw;
+    gap: 3vw;
+  }
+
+  #logue-container-1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0vw;
+    flex-direction: column;
+  }
+  
+  #logue-container-2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0vw;
+    margin-left: 0;
+  }
+  
+  #logue-container-3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0vw;
+  }
+
+  .card--body svg{
+    max-width: 90%;
+  }
+
+  .card-1-text{
+    margin-bottom: 20vw;
+  }
+
+  .t--each-spn{
+    font-weight: 600;
+    font-family: Hit-Cond;
+    font-size: 4vw;
+    color: var(--primary-color);
+    letter-spacing: 1px;
+  }
+  
+  .t--each-para{
+    width: 100%;
+    margin-bottom: 3vw;
+    color: var(--primary-color);
+    letter-spacing: 1px;
+    font-size: 3.2vw;
+    font-family: Hit-Cond;
+  }
+  
+  .cta-btn{
+    border-radius: 10px;
+   &:hover{
+    background-image: url(./assets/img/CerberusBtnAnim.gif);
+    background-size: cover;
+    background-position: center;
+  }
   }
 }

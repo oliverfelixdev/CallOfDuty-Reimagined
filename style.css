@@ -20,7 +20,7 @@ body {
   /* background-size: cover; */
   background-repeat: no-repeat;
   /* background-attachment: fixed; */
-  background-image: url('./assets/img/98grain321msa.webp');
+  background-image: url("./assets/img/98grain321msa.webp");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -104,7 +104,7 @@ nav {
 }
 
 #section2 {
-  height: 35vh;
+  height: 45vh;
   width: 100%;
   overflow-x: hidden;
   position: relative;
@@ -127,15 +127,19 @@ nav {
 }
 
 @keyframes infiniteScroll {
-  from {transform: translateX(0)}
-  to {transform: translateX(-50%)}
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 .section2-wrapper .horizontal-scrolling-items__item {
   font-family: Hit-Bold;
   font-weight: 900;
   white-space: nowrap;
-  background-image: url('https://www.callofduty.com/content/dam/atvi/callofduty/cod-touchui/blackops6/common/CerberusBtnAnim_6sec.gif');
+  background-image: url("./assets/img/CerberusBtnAnim.gif");
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -143,7 +147,12 @@ nav {
   text-align: center;
   font-weight: 800;
   -webkit-font-smoothing: antialiased;
+  
+  /* Optional: Add these if necessary */
+  background-size: contain; /* Or cover, depending on your design */
+  background-repeat: repeat; /* If you want the GIF to repeat */
 }
+
 /* 
 .section2-wrapper h1 span {
   text-align: justify;
@@ -151,14 +160,111 @@ nav {
 }
  */
 
-#section3{
+#section3 {
   min-height: 100vh;
   width: 100vw;
   position: relative;
-  background-color: chocolate;
+  /* background-color: rgba(255, 255, 255, 0.333); */
+  padding: 1vw;
 }
 
-.section3-wrapper{
+.section3-wrapper {
   width: 100%;
-  background-color: red;
+  padding: 1vw;
+}
+
+.highlight-sect-title-con {
+  padding: 0.5vw 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(1px);
+}
+
+.highlight-sect-title-con h1 {
+  font-size: 6vw;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  font-family: Hit-Cond;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.section3-data-wrapper {
+  margin-top: 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5vw;
+}
+
+#logue-container-1 {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 2vw;
+}
+
+#logue-container-2 {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  margin-left: 10vw;
+  width: 100%;
+  gap: 2vw;
+}
+
+#logue-container-3 {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 2vw;
+}
+
+.card--body {
+  cursor: grabbing;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card--body:hover .svg-banner-image {
+  scale: 1.2;
+}
+
+.svg-banner-image {
+  scale: 1.15;
+  transition: all 0.3s;
+}
+
+.card-1-text {
+  width: 50%;
+  margin-top: 3vw;
+}
+
+.t--each-spn {
+  font-weight: 600;
+  font-family: Hit-Cond;
+  font-size: 1.5vw;
+  color: var(--primary-color);
+  letter-spacing: 1px;
+}
+
+.t--each-para {
+  width: 80%;
+  margin-bottom: 1vw;
+  color: var(--primary-color);
+  letter-spacing: 1px;
+  font-size: 1.2vw;
+  font-family: Hit-Cond;
+}
+
+.cta-btn {
+  border-radius: 10px;
+  &:hover {
+    background-image: url(./assets/img/CerberusBtnAnim.gif);
+    background-size: cover;
+    background-position: center;
+  }
 }
