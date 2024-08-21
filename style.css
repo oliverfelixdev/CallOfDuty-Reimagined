@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+#webbyoly {
+  position: relative;
+  overflow-x: hidden;
+  background-color: var(--secondary-background);
+  /* background: url('./assets/img/98grain321msa.webp'); */
+  /* background-position: center; */
+  /* background-size: cover; */
+  /* background-repeat: no-repeat; */
+  /* background-attachment: fixed; */
+}
+
+.canvas {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+nav {
+  display: none;
+}
+
+/* .navbar-wrapper{} */
+
+/* .nav-child-1{} */
+
+/* .nav-child-1 .l0g0 img{} */
+
+/* .nav-child-1 .actvision-wrapper{} */
+
+/* .nav-child-1 .actvision-wrapper svg{} */
+
+/* .nav-child-2{} */
+
+.sidebar {
+  height: 80vh;
+  width: 28vw;
+  position: fixed;
+  top: -50%;
+  right: -50%;
+  background: linear-gradient(#00000075, #5d61645b);
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  flex-shrink: 0;
+  /* z-index: 999; */
+}
+
+.btn-close-menu {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Main Starts Section One 1 only one and 1 */
+#section1 {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  background-color: #e59d3b;
+}
+
+.section1--wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1vw;
+}
+
+.section1--wrapper .showreelContainer {
+  height: 40%;
+  width: 40%;
+  position: relative;
+  overflow: hidden;
+}
+
+.section1--wrapper .showreelContainer .cod--reel {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  scale: 1.2;
+  background-size: cover;
+}
+
+#section2 {
+  height: 55vh;
+  width: 100vw;
+  position: relative;
+}
+
+.section2-wrapper {
+  width: 100%;
+  height: 100%;
+  /* background-color: red; */
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  padding: 0 3vw;
+  flex-direction: column;
+}
+
+.section2-wrapper h1 {
+  font-family: Hit-Cond;
+  font-size: 2.4vw;
+  color: #ffffff30;
+  letter-spacing: 1px;
+  /* background-color: slateblue; */
+  margin-top: 5px;
+}
+
+.section2-wrapper h1 span {
+  font-family: Hit-Cond;
+}
+

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CALL OF DUTY</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="utils.css">
+  <link rel="stylesheet" href="media.css">
+</head>
+ 
+<body>
+  <div id="webbyoly">
+    <canvas class="canvas"></canvas>
+    <header class="relative w-full header-header">
+      <nav class="nav-bar h-[15vh] w-full fixed top-0 left-0 items-center justify-center z-10 shadow-lg">
+        <div class="navbar-wrapper flex items-center justify-center min-w-[93%] h-[100%] ">
+          <div class="nav-child-1 flex items-center justify-start gap-20 h-full w-[50%]">
+            <a href="index.html" class="l0g0">
+              <img src="./assets/svg/cod-logo.svg" alt="" class="min-h-10 ">
+            </a>
+            <div class="actvision-wrapper hidden sm:flex items-center justify-center gap-1">
+              <span class="nav-link text-md sm:visiblity-hidden cursor-pointer">Activision</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#ffffff" class="size-4">
+                <path fill-rule="evenodd"
+                  d="M4.22 11.78a.75.75 0 0 1 0-1.06L9.44 5.5H5.75a.75.75 0 0 1 0-1.5h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V6.56l-5.22 5.22a.75.75 0 0 1-1.06 0Z"
+                  clip-rule="evenodd" />
+              </svg>
+            </div>
+          </div>
+          <div class="nav-child-2 flex items-center justify-end w-[50%] gap-5">
+            <!--             <button class="nav-link btn-login flex items-center justify-center gap-3 py-1 px-3 bg-[var(--primary-color)] rounded-lg text-sm uppercase shadow-lg">
+              Season 6
+            </button> -->
+            <div class="btn-menu-appeand cursor-pointer">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#ffffff"
+                stroke-width=".5">
+                <path
+                  d="M4 6C4 5.44772 4.44772 5 5 5H19C19.5523 5 20 5.44772 20 6C20 6.55228 19.5523 7 19 7H5C4.44772 7 4 6.55228 4 6Z"
+                  fill="#ffffff" />
+                <path
+                  d="M4 18C4 17.4477 4.44772 17 5 17H19C19.5523 17 20 17.4477 20 18C20 18.5523 19.5523 19 19 19H5C4.44772 19 4 18.5523 4 18Z"
+                  fill="#ffffff" />
+                <path
+                  d="M11 11C10.4477 11 10 11.4477 10 12C10 12.5523 10.4477 13 11 13H19C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11H11Z"
+                  fill="#ffffff" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="sidebar rounded-2xl backdrop-blur-md shadow-md z-20">
+        <div
+          class="sidebar-wrapper h-full w-full backdrop-blur-md p-3 rounded-2xl flex flex-col items-start justify-between">
+          <div class="sidebar-child-top flex items-center justify-between w-full">
+            <h3 class="global-texts-Cond text-3xl sdb-head-mn">CALL OF DUTY</h3>
+            <button
+              class="global-texts-Cond btn-close-menu text-sm py-1 px-3 rounded-lg capitalize bg-[var(--btn-background)] cursor-pointer">close</button>
+          </div>
+          <div class="sidebar-child-middle flex flex-col items-start justify-center gap-3 p-1 w-full">
+            <span class="interection text-xs text-[#ffffff48]">Menu</span>
+            <div class="sdb-elem block">
+              <a href="#" class="cursor-pointer global-texts-Cond text-2xl p-1">GAMES</a>
+            </div>
+            <div class="sdb-elem block">
+              <a href="#" class="cursor-pointer global-texts-Cond text-2xl p-1">NEWS</a>
+            </div>
+            <div class="sdb-elem flex items-center justify-between w-full p-1">
+              <a href="#" class="cursor-pointer global-texts-Cond text-2xl">ESPORTS</a>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#fff" class="w-5 h-5">
+                <path fill-rule="evenodd"
+                  d="M4.22 11.78a.75.75 0 0 1 0-1.06L9.44 5.5H5.75a.75.75 0 0 1 0-1.5h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V6.56l-5.22 5.22a.75.75 0 0 1-1.06 0Z"
+                  clip-rule="evenodd" />
+              </svg>
+            </div>
+            <div class="sdb-elem flex items-center justify-between w-full p-1">
+              <a href="#" class="cursor-pointer global-texts-Cond text-2xl">SUPPORT</a>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#fff" class="w-5 h-5">
+                <path fill-rule="evenodd"
+                  d="M4.22 11.78a.75.75 0 0 1 0-1.06L9.44 5.5H5.75a.75.75 0 0 1 0-1.5h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V6.56l-5.22 5.22a.75.75 0 0 1-1.06 0Z"
+                  clip-rule="evenodd" />
+              </svg>
+            </div>
+          </div>
+          <div class="sidebar-child-bottom p-1 w-full">
+            <span class="text-xs text-[#ffffff48]">Keys</span>
+            <div class="sidebar-bot-flex flex items-center justify-between gap-3 mt-1">
+              <div class="social-elem cursor-pointer flex items-center justify-center p-1">
+                <a href="#" class="text-lg font-[Hit-Cond] text-[var(--primary-color)]">STORE</a>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#ffffff" class="w-5 h-5">
+                  <path fill-rule="evenodd"
+                    d="M4.22 11.78a.75.75 0 0 1 0-1.06L9.44 5.5H5.75a.75.75 0 0 1 0-1.5h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V6.56l-5.22 5.22a.75.75 0 0 1-1.06 0Z"
+                    clip-rule="evenodd" />
+                </svg>
+              </div>
+              <div class="social-elem cursor-pointer flex items-center justify-center">
+                <a href="#" class="text-lg font-[Hit-Cond] text-[var(--primary-color)]">EARLY ACCESS</a>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#ffffff" class="w-5 h-5">
+                  <path fill-rule="evenodd"
+                    d="M4.22 11.78a.75.75 0 0 1 0-1.06L9.44 5.5H5.75a.75.75 0 0 1 0-1.5h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V6.56l-5.22 5.22a.75.75 0 0 1-1.06 0Z"
+                    clip-rule="evenodd" />
+                </svg>
+              </div>
+              <div class="social-elem cursor-pointer flex items-center justify-center">
+                <a class="text-lg font-[Hit-Cond] text-[var(--primary-color)]">BLACK OPS 6</a>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#ffffff" class="w-5 h-5">
+                  <path fill-rule="evenodd"
+                    d="M4.22 11.78a.75.75 0 0 1 0-1.06L9.44 5.5H5.75a.75.75 0 0 1 0-1.5h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V6.56l-5.22 5.22a.75.75 0 0 1-1.06 0Z"
+                    clip-rule="evenodd" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section id="section1" class="view-main--1 rounded-3xl">
+      <div class="section1--wrapper">
+        <div class="showreelContainer rounded-2xl text-white video-container">
+          <video class="cod--reel z-10 lazy-video" loop muted
+            src="./assets/identities/main471280trailer3297r.mp4"></video>
+          <span class="reelTip absolute z-20 bottom-0 p-4 font-[Hit-Cond] text-md mix-blend-difference">CALL OF DUTY
+            <br> March 2020</span>
+        </div>
+      </div>
+    </section>
+    <section id="section2" class="view-sub--2">
+      <div class="section2-wrapper">
+        <h1 class="sub-text">Call of Duty represents the pinnacle of first-person shooter games, combining tactical
+          precision with</h1>
+        <h1 class="sub-text">— immersive gameplay. This globally recognized franchise has consistently set industry
+          standards </h1>
+        <h1 class="sub-text">through its innovative mechanics and realistic combat scenarios. Tailored to meet the
+          expectations</h1>
+        <h1 class="sub-text">of both seasoned players and newcomers. Call of Duty delivers an unmatched experience in
+          terms of strategy and execution.</h1>
+      </div>
+    </section>
+
+
+
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/jsm/loaders/FontLoader.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/jsm/geometries/TextGeometry.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+    integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lazyload@latest/lazyload.min.js"></script>
+
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/js/loaders/SVGLoader.js"></script> -->
+  <script src="script.js"></script>
+</body>
+
+</html>

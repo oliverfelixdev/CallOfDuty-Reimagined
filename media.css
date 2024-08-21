@@ -1,0 +1,42 @@
+@media only screen and (max-width: 768px) {
+  .sidebar {
+    width: 42vw;
+  }
+
+  .sidebar .sdb-head-mn {
+    font-size: 4.5vw;
+  }
+
+  .view-sub--2 {
+    height: 60vh;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .sidebar {
+    width: 95%;
+    top: -100%;
+    right: -100%;
+  }
+
+  .sidebar .sdb-head-mn {
+    font-size: 6.5vw;
+  }
+  .section1--wrapper {
+    padding: 2vw;
+  }
+
+  .view-sub--2 {
+    height: 40vh;
+  }
+
+  .section2-wrapper h1 {
+    font-family: Hit-Cond;
+    font-size: 3.9vw;
+    text-align: justify;
+    color: #ffffff30;
+    letter-spacing: 1px;
+    /* background-color: slateblue; */
+    /* margin-top: 5px; */
+  }
+}

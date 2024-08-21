@@ -1,0 +1,30 @@
+:root {
+  --primary-background: #dadada;
+  --secondary-background: #060606;
+  --btn-background: #f96800;
+  --primary-color: #dadada;
+  --secondary-color: #131313;
+}
+@font-face {
+  font-family: Hit-Cond;
+  src: url(./assets/fonts/HitmarkerCondensed-Regular.woff2);
+}
+
+@font-face {
+  font-family: Hit-Bold;
+  src: url(./assets/fonts/HitmarkerNormal-Bold.woff2);
+}
+
+.global-texts-Cond {
+  font-family: Hit-Cond;
+  color: var(--primary-color);
+}
+
+.nav-link {
+  font-family: Hit-Cond;
+  color: var(--primary-color);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
