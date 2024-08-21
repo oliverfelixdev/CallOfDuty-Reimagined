@@ -42,7 +42,7 @@ function canvasMain() {
 
   // Load and apply a military-style font
   fontLoader.load("./source/4n213h58945n.json", (font) => {
-    const textGeometry = new THREE.TextGeometry("CALL OF DUTY", {
+    const textGeometry = new THREE.TextGeometry(`CALL OF DUTY`, {
       font,
       size: 0.8,
       // color: 0xaaaaaa,
@@ -266,7 +266,7 @@ function reelWarzone() {
 }
 reelWarzone();
 
-function clutterSubSec() {
+/* function clutterSubSec() {
   let subH1Text = document.querySelectorAll(".sub-text");
   subH1Text.forEach((elem) => {
     let clutter = "";
@@ -290,7 +290,7 @@ function clutterSubSec() {
     },
   });
 }
-clutterSubSec();
+clutterSubSec(); */
 
 function lazyKeep() {
   function lazyIMGAES() {

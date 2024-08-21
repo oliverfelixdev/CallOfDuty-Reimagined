@@ -14,12 +14,16 @@ body {
 #webbyoly {
   position: relative;
   overflow-x: hidden;
-  background-color: var(--secondary-background);
+  /* background-color: var(--secondary-background); */
   /* background: url('./assets/img/98grain321msa.webp'); */
   /* background-position: center; */
   /* background-size: cover; */
-  /* background-repeat: no-repeat; */
+  background-repeat: no-repeat;
   /* background-attachment: fixed; */
+  background-image: url('./assets/img/98grain321msa.webp');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 .canvas {
@@ -95,37 +99,66 @@ nav {
   position: absolute;
   top: 0;
   left: 0;
-  scale: 1.2;
+  scale: 1.1;
   background-size: cover;
 }
 
 #section2 {
-  height: 55vh;
-  width: 100vw;
+  height: 35vh;
+  width: 100%;
+  overflow-x: hidden;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .section2-wrapper {
-  width: 100%;
-  height: 100%;
-  /* background-color: red; */
   display: flex;
-  align-items: start;
+  align-items: center;
   justify-content: center;
-  padding: 0 3vw;
-  flex-direction: column;
+  font-size: 6vw;
+  color: var(--primary-color);
+  width: 2600px;
+  animation-name: infiniteScroll;
+  animation-duration: 14s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 
-.section2-wrapper h1 {
-  font-family: Hit-Cond;
-  font-size: 2.4vw;
-  color: #ffffff30;
-  letter-spacing: 1px;
-  /* background-color: slateblue; */
-  margin-top: 5px;
+@keyframes infiniteScroll {
+  from {transform: translateX(0)}
+  to {transform: translateX(-50%)}
 }
 
+.section2-wrapper .horizontal-scrolling-items__item {
+  font-family: Hit-Bold;
+  font-weight: 900;
+  white-space: nowrap;
+  background-image: url('https://www.callofduty.com/content/dam/atvi/callofduty/cod-touchui/blackops6/common/CerberusBtnAnim_6sec.gif');
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 120px;
+  text-align: center;
+  font-weight: 800;
+  -webkit-font-smoothing: antialiased;
+}
+/* 
 .section2-wrapper h1 span {
+  text-align: justify;
   font-family: Hit-Cond;
 }
+ */
 
+#section3{
+  min-height: 100vh;
+  width: 100vw;
+  position: relative;
+  background-color: chocolate;
+}
+
+.section3-wrapper{
+  width: 100%;
+  background-color: red;
+}
