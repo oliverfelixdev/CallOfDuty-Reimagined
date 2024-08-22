@@ -147,7 +147,7 @@ nav {
   text-align: center;
   font-weight: 800;
   -webkit-font-smoothing: antialiased;
-  
+
   /* Optional: Add these if necessary */
   background-size: contain; /* Or cover, depending on your design */
   background-repeat: repeat; /* If you want the GIF to repeat */
@@ -262,6 +262,7 @@ nav {
 
 .cta-btn {
   border-radius: 10px;
+  padding: 1vw 3vw;
   &:hover {
     background-image: url(./assets/img/CerberusBtnAnim.gif);
     background-size: cover;

@@ -292,69 +292,45 @@ reelWarzone();
 }
 clutterSubSec(); */
 
-function lazyKeep() {
-  function lazyIMGAES() {
-    document.addEventListener("DOMContentLoaded", function () {
-      const lazyImages = document.querySelectorAll(".lazy");
-
-      const lazyLoad = function (entries, observer) {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const image = entry.target;
-            image.src = image.dataset.src;
-            image.classList.remove("lazy");
-            observer.unobserve(image);
-          }
-        });
-      };
-
-      const observer = new IntersectionObserver(lazyLoad, {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.1,
-      });
-
-      lazyImages.forEach((image) => {
-        observer.observe(image);
-      });
+function allLazy() {
+  document.addEventListener("DOMContentLoaded", function () {
+    var lazyLoadInstance = new LazyLoad({
+      elements_selector: ".lazy", // Specify the class for lazy-loaded elements
     });
-  }
-  lazyIMGAES();
-  function lazyVideos() {
-    document.addEventListener("DOMContentLoaded", function () {
-      const videoContainers = document.querySelectorAll(".video-container");
-
-      const loadVideo = function (entries, observer) {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const container = entry.target;
-            const video = container.querySelector(".lazy-video");
-            const source = video.querySelector("src");
-
-            // Set the src of the video
-            source.src = source.dataset.src;
-            video.load(); // Load the video
-
-            // Play video automatically if needed
-            // video.play();
-
-            // Unobserve the container
-            observer.unobserve(container);
-          }
-        });
-      };
-
-      const observer = new IntersectionObserver(loadVideo, {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.1,
-      });
-
-      videoContainers.forEach((container) => {
-        observer.observe(container);
-      });
-    });
-  }
-  lazyVideos;
+  });
 }
-lazyKeep();
+allLazy();
+
+/* function parallaxButtons() {
+  const docStyle = document.documentElement.style;
+  const aElem = document.querySelector(".cta-btn");
+  const boundingClientRect = aElem.getBoundingClientRect();
+
+  aElem.onmousemove = function (e) {
+    const x = e.clientX - boundingClientRect.left;
+    const y = e.clientY - boundingClientRect.top;
+
+    const xc = boundingClientRect.width / 2;
+    const yc = boundingClientRect.height / 2;
+
+    const dx = x - xc;
+    const dy = y - yc;
+
+    docStyle.setProperty("--rx", `${dy / -1}deg`);
+    docStyle.setProperty("--ry", `${dx / 10}deg`);
+  };
+
+  aElem.onmouseleave = function (e) {
+    docStyle.setProperty("--ty", "0");
+    docStyle.setProperty("--rx", "0");
+    docStyle.setProperty("--ry", "0");
+  };
+
+  aElem.onmousedown = function (e) {
+    docStyle.setProperty("--tz", "-25px");
+  };
+
+  document.body.onmouseup = function (e) {
+    docStyle.setProperty("--tz", "-12px");
+  };
+} parallaxButtons(); */
