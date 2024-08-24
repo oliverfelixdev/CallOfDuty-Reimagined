@@ -73,7 +73,7 @@ nav {
   height: 100vh;
   width: 100vw;
   position: relative;
-  background-color: #e59d3b;
+  /* background-color: #e59d3b; */
 }
 
 .section1--wrapper {
@@ -104,7 +104,8 @@ nav {
 }
 
 #section2 {
-  height: 45vh;
+  z-index: 999;
+  height: 55vh;
   width: 100%;
   overflow-x: hidden;
   position: relative;
@@ -165,7 +166,7 @@ nav {
   width: 100vw;
   position: relative;
   /* background-color: rgba(255, 255, 255, 0.333); */
-  padding: 1vw;
+  padding: 1vw 1vw 5vw 1vw;
 }
 
 .section3-wrapper {
@@ -268,4 +269,29 @@ nav {
     background-size: cover;
     background-position: center;
   }
+}
+
+#section4{
+  min-height: 50vh;
+  width: 100vw;
+  position: relative;
+}
+
+.section4-wrapper{
+  width: 100%;
+  padding: 1vw 3vw;
+  /* margin-top: 2vw; */
+}
+
+.sub-text{
+  font-family: Hit-Cond;
+  font-size: 2.5vw;
+  color: #ffffff43;
+  text-align: justify;
+  line-height: 3.5vw;
+
+}
+
+.sub-text span{
+  font-family: Hit-COnd;
 }
