@@ -2,383 +2,108 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background-color: #040404;
+            margin: 0;
         }
 
-        .canvas-container-parent{
-            height: 80vh;
-            width: 80vw;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .canvas-container {
-            height: 100%;
+        #canvas {
+            position: absolute;
             width: 100%;
-            background: #000000;
+            height: 100%;
+        }
+
+        #container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
 
 <body>
-    <div class="canvas-container-parent">
-        <div class="canvas-container"></div>
+    <div id="container">
+        <div id="image"></div>
+        <canvas id="canvas"></canvas>
     </div>
-
-    <script src="https://unpkg.com/three@0.99.0/build/three.min.js"></script>
-    <!-- <script src='https://unpkg.com/three@0.99.0/examples/js/controls/OrbitControls.js'></script> -->
-    <script src="https://unpkg.com/three@0.99.0/examples/js/postprocessing/EffectComposer.js"></script>
-    <script src="https://unpkg.com/three@0.99.0/examples/js/postprocessing/RenderPass.js"></script>
-    <script src="https://unpkg.com/three@0.99.0/examples/js/postprocessing/ShaderPass.js"></script>
-    <script src="https://unpkg.com/three@0.99.0/examples/js/shaders/CopyShader.js"></script>
-    <!-- <script src='https://unpkg.com/three@0.99.0/examples/js/shaders/LuminosityHighPassShader.js'></script> -->
-    <!-- <script src='https://unpkg.com/three@0.99.0/examples/js/postprocessing/UnrealBloomPass.js'></script> -->
-
-    <script src="https://unpkg.com/animejs@2.2.0/anime.min.js"></script>
-
-    <script id="plane-vertex-shader" type="x-shader/x-vertex">
-
-      uniform sampler2D uImage1;
-      uniform sampler2D uImage2;
-      uniform vec2 uImageSize;
-      uniform vec2 uWindowSize;
-      uniform vec2 uMousePosition;
-      uniform float uTime;
-      uniform float uAnimationTime;
-
-      varying vec3 vPosition;
-      varying vec2 vUv;
-
-      void main() {
-          vec3 delta = vec3(0.0, 0.0, 0.0);
-          vec3 newPosition = position + delta;
-
-          vUv = uv;
-
-          gl_Position = vec4(newPosition, 1.0);
-      }
-    </script>
-
-    <script id="plane-fragment-shader" type="x-shader/x-fragment">
-
-      uniform sampler2D uImage1;
-      uniform sampler2D uImage2;
-      uniform vec2 uImageSize;
-      uniform vec2 uWindowSize;
-      uniform vec2 uMousePosition;
-      uniform float uTime;
-      uniform float uAnimationTime;
-
-      varying vec2 vUv;
-
-
-      float rand(vec2);
-      float noise(vec2);
-
-
-      void main() {
-          vec2 ratio = vec2(
-              min((uWindowSize.x / uWindowSize.y) / (uImageSize.x / uImageSize.y), 1.0),
-              min((uWindowSize.y / uWindowSize.x) / (uImageSize.y / uImageSize.x), 1.0)
-          );
-
-          vec2 uv = vec2(
-              vUv.x * ratio.x + (1.0 - ratio.x) * 0.5,
-              vUv.y * ratio.y + (1.0 - ratio.y) * 0.5
-          );
-
-          vec4 color1 = texture2D(uImage1, uv);
-          vec4 color2 = texture2D(uImage2, uv);
-
-          vec2 noiseXY = vec2(vUv.x * uWindowSize.x / uWindowSize.y, vUv.y);
-
-          gl_FragColor = mix(color1, color2, smoothstep(
-              -0.1,
-              0.0,
-              uAnimationTime + vUv.x +  3.0 * noise(noiseXY * 100.0) - 3.0
-          ));
-      }
-
-
-      float rand(vec2 seed) {
-          return fract(sin(dot(seed, vec2(12.9898,78.233))) * 43758.5453123);
-      }
-
-
-      float noise(vec2 position) {
-          vec2 block_position = floor(position);
-
-          float top_left_value     = rand(block_position);
-          float top_right_value    = rand(block_position + vec2(1.0, 0.0));
-          float bottom_left_value  = rand(block_position + vec2(0.0, 1.0));
-          float bottom_right_value = rand(block_position + vec2(1.0, 1.0));
-
-          vec2 computed_value = smoothstep(0.0, 1.0, fract(position));
-
-          return mix(top_left_value, top_right_value, computed_value.x)
-              + (bottom_left_value  - top_left_value)  * computed_value.y * (1.0 - computed_value.x)
-              + (bottom_right_value - top_right_value) * computed_value.x * computed_value.y
-              - 0.5;
-      }
-    </script>
     <script>
-        let SCENE;
-        let CAMERA;
-        let RENDERER;
-        let CONTROLS;
-        let COMPOSER;
+        var viewWidth,
+            viewHeight,
+            canvas = document.getElementById("canvas"),
+            ctx;
 
-        let TIMES = {
-            GLOBAL: 10, // Let it be non zero at start
-            ANIMATION: 0,
+        // change these settings
+        var patternSize = 64,
+            patternScaleX = 3,
+            patternScaleY = 1,
+            patternRefreshInterval = 4,
+            patternAlpha = 18; // int between 0 and 255,
+
+        var patternPixelDataLength = patternSize * patternSize * 4,
+            patternCanvas,
+            patternCtx,
+            patternData,
+            frame = 0;
+
+        window.onload = function () {
+            initCanvas();
+            initGrain();
+            requestAnimationFrame(loop);
         };
 
-        let WINDOW_SIZE = new THREE.Vector2(
-            window.innerWidth,
-            window.innerHeight
-        );
-        let MOUSE_POSITION = new THREE.Vector2(
-            WINDOW_SIZE.x / 2.0,
-            WINDOW_SIZE.y / 2.0
-        );
+        // create a canvas which will render the grain
+        function initCanvas() {
+            viewWidth = canvas.width = canvas.clientWidth;
+            viewHeight = canvas.height = canvas.clientHeight;
+            ctx = canvas.getContext('2d');
 
-        main();
-
-        function main() {
-            init();
-            onWindowResize();
-            animate();
-
-            /* ----- */
-
-            let animation = anime({
-                targets: TIMES,
-                ANIMATION: 5,
-                duration: 3000,
-                delay: 1500,
-                easing: "easeInOutQuad",
-            });
-
-            setInterval(() => {
-                SCENE.traverse(function (child) {
-                    if (
-                        child instanceof THREE.Mesh &&
-                        child.material.type === "ShaderMaterial"
-                    ) {
-                        const temp = child.material.uniforms.uImage1.value;
-
-                        child.material.uniforms.uImage1.value =
-                            child.material.uniforms.uImage2.value;
-                        child.material.uniforms.uImage2.value = temp;
-                    }
-                });
-
-                animation.restart();
-            }, 4500);
-
-            /* ----- */
+            ctx.scale(patternScaleX, patternScaleY);
         }
 
-        function init() {
-            initScene();
-            initCamera();
-            initRenderer();
-            initComposer();
-            initControls();
-            initEventListeners();
-
-            createObjects();
-
-            document
-                .querySelector(".canvas-container")
-                .appendChild(RENDERER.domElement);
+        // create a canvas which will be used as a pattern
+        function initGrain() {
+            patternCanvas = document.createElement('canvas');
+            patternCanvas.width = patternSize;
+            patternCanvas.height = patternSize;
+            patternCtx = patternCanvas.getContext('2d');
+            patternData = patternCtx.createImageData(patternSize, patternSize);
         }
 
-        function initScene() {
-            SCENE = new THREE.Scene();
+        // put a random shade of gray into every pixel of the pattern
+        function update() {
+            var value;
 
-            initLights();
+            for (var i = 0; i < patternPixelDataLength; i += 4) {
+                value = (Math.random() * 255) | 0;
+
+                patternData.data[i] = value;
+                patternData.data[i + 1] = value;
+                patternData.data[i + 2] = value;
+                patternData.data[i + 3] = patternAlpha;
+            }
+
+            patternCtx.putImageData(patternData, 0, 0);
         }
 
-        function initLights() {
-            const point = new THREE.PointLight(0xffffff, 1, 0);
-            point.position.set(0, 100, 50);
-            SCENE.add(point);
+        // fill the canvas using the pattern
+        function draw() {
+            ctx.clearRect(0, 0, viewWidth, viewHeight);
+
+            ctx.fillStyle = ctx.createPattern(patternCanvas, 'repeat');
+            ctx.fillRect(0, 0, viewWidth, viewHeight);
         }
 
-        function initCamera() {
-            CAMERA = new THREE.PerspectiveCamera(
-                45,
-                window.innerWidth / window.innerHeight,
-                1,
-                2000
-            );
-            CAMERA.position.z = 5;
-        }
+        function loop() {
+            if (++frame % patternRefreshInterval === 0) {
+                update();
+                draw();
+            }
 
-        function initRenderer() {
-            RENDERER = new THREE.WebGLRenderer({ alpha: true });
-            RENDERER.setPixelRatio(window.devicePixelRatio);
-            RENDERER.setSize(window.innerWidth, window.innerHeight);
-            RENDERER.shadowMap.enabled = true;
-            RENDERER.shadowMapSort = true;
-            RENDERER.setClearColor(0x000000, 0.3);
-        }
-
-        function initComposer() {
-            COMPOSER = new THREE.EffectComposer(RENDERER);
-            COMPOSER.setSize(window.innerWidth, window.innerHeight);
-
-            const renderPass = new THREE.RenderPass(SCENE, CAMERA);
-            COMPOSER.addPass(renderPass);
-
-            renderPass.renderToScreen = true;
-        }
-
-        function initControls() {
-            /*
-                CONTROLS = new THREE.OrbitControls(CAMERA);
-                CONTROLS.enableZoom = false;
-                CONTROLS.minPolarAngle = Math.PI * 1 / 4;
-                CONTROLS.maxPolarAngle = Math.PI * 3 / 4;
-                CONTROLS.update();
-                */
-        }
-
-        function initEventListeners() {
-            window.addEventListener("resize", onWindowResize);
-            document.addEventListener("mousemove", onMouseMove);
-
-            onWindowResize();
-        }
-
-        function onWindowResize() {
-            WINDOW_SIZE.set(window.innerWidth, window.innerHeight);
-
-            CAMERA.aspect = window.innerWidth / window.innerHeight;
-            CAMERA.updateProjectionMatrix();
-
-            RENDERER.setSize(window.innerWidth, window.innerHeight);
-            COMPOSER.setSize(window.innerWidth, window.innerHeight);
-        }
-
-        function onMouseMove(e) {
-            MOUSE_POSITION.set(
-                parseFloat(e.clientX),
-                parseFloat(WINDOW_SIZE.y - e.clientY)
-            );
-        }
-
-        function animate() {
-            requestAnimationFrame(animate);
-            // CONTROLS.update();
-            TIMES.GLOBAL += 0.005;
-            updateUniforms();
-            render();
-        }
-
-        function updateUniforms() {
-            SCENE.traverse(function (child) {
-                if (
-                    child instanceof THREE.Mesh &&
-                    child.material.type === "ShaderMaterial"
-                ) {
-                    child.material.uniforms.uTime.value = TIMES.GLOBAL;
-                    child.material.uniforms.uAnimationTime.value = TIMES.ANIMATION;
-                    child.material.uniforms.uWindowSize.value = WINDOW_SIZE;
-                    child.material.uniforms.uMousePosition.value = MOUSE_POSITION;
-                    child.material.needsUpdate = true;
-                }
-            });
-        }
-
-        function render() {
-            CAMERA.lookAt(SCENE.position);
-            COMPOSER.render(SCENE, CAMERA);
-        }
-
-        function createObjects() {
-            const loader = new THREE.TextureLoader();
-
-            const urls = [
-                "https://cdn.dribbble.com/users/196265/screenshots/3046805/specialist_icon.jpg?resize=800x600&vertical=center",
-                "https://cdn.dribbble.com/users/3892450/screenshots/13917875/media/fa7b04871e6f9c0bed4a2a4789e89a8f.png?resize=1200x900&vertical=center",
-            ];
-
-            const promises = [];
-
-            urls.forEach((url) => {
-                promises.push(
-                    new Promise((resolve, reject) => {
-                        loader.load(url, (texture) => {
-                            texture.magFilter = THREE.NearestFilter;
-                            texture.minFilter = THREE.NearestFilter;
-                            resolve(texture);
-                        });
-                    })
-                );
-            });
-
-            Promise.all(promises).then((loadedTextures) => {
-                const geometry = new THREE.PlaneGeometry(2, 2, 100, 100);
-
-                const shaderMaterial = new THREE.ShaderMaterial({
-                    uniforms: {
-                        uImage1: {
-                            type: "t",
-                            value: loadedTextures[0],
-                        },
-                        uImage2: {
-                            type: "t",
-                            value: loadedTextures[1],
-                        },
-                        uImageSize: {
-                            type: "v2",
-                            value: new THREE.Vector2(1920, 1080),
-                        },
-                        uWindowSize: {
-                            type: "v2",
-                            value: WINDOW_SIZE,
-                        },
-                        uMousePosition: {
-                            type: "v2",
-                            value: MOUSE_POSITION,
-                        },
-                        uTime: {
-                            type: "f",
-                            value: TIMES.GLOBAL,
-                        },
-                        uAnimationTime: {
-                            type: "f",
-                            value: TIMES.ANIMATION,
-                        },
-                    },
-                    transparent: true,
-                    side: THREE.DoubleSide,
-                    vertexShader: document.getElementById("plane-vertex-shader")
-                        .textContent,
-                    fragmentShader: document.getElementById("plane-fragment-shader")
-                        .textContent,
-                });
-
-                const plane = new THREE.Mesh(geometry, shaderMaterial);
-
-                SCENE.add(plane);
-            });
+            requestAnimationFrame(loop);
         }
     </script>
 </body>

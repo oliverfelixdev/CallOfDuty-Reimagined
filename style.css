@@ -166,7 +166,7 @@ nav {
   width: 100vw;
   position: relative;
   /* background-color: rgba(255, 255, 255, 0.333); */
-  padding: 1vw 1vw 5vw 1vw;
+  /* padding: 1vw 1vw 5vw 1vw; */
 }
 
 .section3-wrapper {
@@ -259,6 +259,7 @@ nav {
   letter-spacing: 1px;
   font-size: 1.2vw;
   font-family: Hit-Cond;
+  font-weight: 100;
 }
 
 .cta-btn {
@@ -271,27 +272,55 @@ nav {
   }
 }
 
-#section4{
+#section4 {
+  /* background-color: rebeccapurple; */
   min-height: 50vh;
   width: 100vw;
   position: relative;
 }
 
-.section4-wrapper{
+.section4-wrapper {
   width: 100%;
-  padding: 1vw 3vw;
+  padding: 6vw 2.3vw 4vw 2.3vw;
   /* margin-top: 2vw; */
 }
 
-.sub-text{
+.sub-text {
   font-family: Hit-Cond;
   font-size: 2.5vw;
   color: #ffffff43;
   text-align: justify;
   line-height: 3.5vw;
-
 }
 
-.sub-text span{
+.sub-text span {
   font-family: Hit-COnd;
+}
+
+#section5 {
+  position: relative;
+  min-height: 110vh;
+  width: 100vw;
+}
+
+.section5-wrapper {
+  width: 100%;
+  padding: 2vw 0;
+}
+
+.s5-title-con {
+  padding: 0.5vw 0 2.5vw 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(1px);
+}
+
+.s5-title-con h1 {
+  font-size: 6vw;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  font-family: Hit-Cond;
+  font-weight: 900;
+  letter-spacing: 1px;
 }

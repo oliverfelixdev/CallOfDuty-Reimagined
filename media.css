@@ -11,19 +11,19 @@
     height: 60vh;
   }
 
-  .highlight-sect-title-con h1{
+  .highlight-sect-title-con h1 {
     font-size: 8vw;
   }
 
-  .t--each-spn{
+  .t--each-spn {
     font-weight: 600;
     font-family: Hit-Cond;
     font-size: 1.8vw;
     color: var(--primary-color);
     letter-spacing: 1px;
   }
-  
-  .t--each-para{
+
+  .t--each-para {
     width: 80%;
     text-align: justify;
     margin-bottom: 2vw;
@@ -31,6 +31,56 @@
     letter-spacing: 1px;
     font-size: 1.6vw;
     font-family: Hit-Cond;
+  }
+
+  .mc--container {
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .tipi-cod {
+    justify-content: center;
+    font-family: Hit-Bold;
+    font-size: 1vw;
+    color: var(--primary-color);
+    position: absolute;
+    top: 69.5%;
+    right: 7.5%;
+    border-radius: 11px;
+    background-color: var(--btn-background);
+    /* padding: .1vw; */
+    width: 11vw;
+    height: 4.5vw;
+    display: flex;
+    align-items: center;
+  }
+
+  .mc--child-1-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mc--child-1-top svg {
+    max-width: 85%;
+    height: 43.5%;
+  }
+
+  .mc--child-2-bottom {
+    padding: 0 10vw;
+  }
+
+  .mc--spn {
+    font-size: 2.5vw;
+  }
+
+  .mc--para {
+    font-size: 1.8vw;
   }
 }
 
@@ -62,58 +112,63 @@
     /* margin-top: 5px; */
   }
 
-
-  .highlight-sect-title-con h1{
+  .highlight-sect-title-con h1 {
     font-size: 11vw;
   }
 
-  .section3-data-wrapper{
+  .section3-data-wrapper {
     padding: 0 2vw;
     gap: 3vw;
   }
 
-  #logue-container-1{
+  #logue-container-1 {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0vw;
     flex-direction: column;
+    border-radius: 1.5rem;
+    
   }
-  
-  #logue-container-2{
+
+  #logue-container-2 {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     gap: 0vw;
     margin-left: 0;
+    border-radius: 1.5rem;
+    background-color: #444444;
+    padding: 0 1vw;
   }
-  
-  #logue-container-3{
+
+  #logue-container-3 {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     gap: 0vw;
+    border-radius: 1.5rem;
   }
 
-  .card--body svg{
+  .card--body svg {
     max-width: 90%;
   }
 
-  .card-1-text{
-    margin-bottom: 20vw;
+  .card-1-text {
+    margin-bottom: 15vw;
   }
 
-  .t--each-spn{
+  .t--each-spn {
     font-weight: 600;
     font-family: Hit-Cond;
     font-size: 4vw;
     color: var(--primary-color);
     letter-spacing: 1px;
   }
-  
-  .t--each-para{
+
+  .t--each-para {
     width: 100%;
     margin-bottom: 3vw;
     color: var(--primary-color);
@@ -121,13 +176,71 @@
     font-size: 3.2vw;
     font-family: Hit-Cond;
   }
-  
-  .cta-btn{
+
+  .cta-btn {
     border-radius: 10px;
-   &:hover{
-    background-image: url(./assets/img/CerberusBtnAnim.gif);
-    background-size: cover;
-    background-position: center;
+    &:hover {
+      background-image: url(./assets/img/CerberusBtnAnim.gif);
+      background-size: cover;
+      background-position: center;
+    }
   }
+
+  #section4{
+    height: 65vh;
+    background-color: var(--btn-background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18vw;
+  }
+
+  .section4-wrapper {
+    width: 100%;
+
+    padding: 0vw 2.5vw;
+    /* margin-top: 2vw; */
+  }
+
+  .sub-text {
+    font-family: Hit-Cond;
+    font-size: 4vw;
+    color: #ffffff43;
+    text-align: justify;
+    line-height: 5.5vw;
+  }
+ 
+  .s5-title-con h1{
+    font-size: 11vw;
+  }
+
+  .tipi-cod {
+    justify-content: center;
+    font-family: Hit-Bold;
+    font-size: 1.5vw;
+    color: var(--primary-color);
+    position: absolute;
+    top: 60%;
+    right: 8.5%;
+    border-radius: 6px;
+    background-color: var(--btn-background);
+    /* padding: .1vw; */
+    width: 10vw;
+    height: 4vw;
+    display: flex;
+    align-items: center;
+  }
+
+  .mc--child-2-bottom {
+    padding: 0 10vw;
+  }
+
+  .mc--spn {
+    font-size: 3.5vw;
+  }
+
+  .mc--para {
+    font-size: 2.8vw;
+    letter-spacing: 0.5px;
   }
 }

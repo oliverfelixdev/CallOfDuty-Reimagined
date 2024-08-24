@@ -300,3 +300,14 @@ function allLazy() {
   });
 }
 allLazy();
+
+function swiperRams() {
+  var swiper = new Swiper(".mySwiper", {
+    loop: true,
+    effect: 'coverflow',
+    keyboard: {
+      enabled: true
+    }
+  });
+}
+swiperRams();
