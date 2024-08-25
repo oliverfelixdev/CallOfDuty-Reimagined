@@ -390,5 +390,114 @@ function swiperRams() {
 }
 swiperRams();
 
+function bodyScrollFrames() {
+  let fadeAnimateElem = document.querySelectorAll(".element-scrollTrigger");
+  gsap.utils.toArray(fadeAnimateElem).forEach((elem) => {
+    gsap.from(elem, {
+      y: 30,
+      opacity: 0,
+      duration: 1,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: elem,
+        start: "top 93%", // Adjust this value to control when the animation starts
+        end: "top 50%",
+        scrub: true,
+      },
+    });
+  });
+}
+bodyScrollFrames();
 
+function tiltAll() {
+  /* Store the element in el */
+  let elements = document.querySelectorAll(".tilt");
 
+  elements.forEach((el) => {
+    const height = el.clientHeight;
+    const width = el.clientWidth;
+
+    el.addEventListener("mousemove", handleMove);
+
+    function handleMove(e) {
+      const xVal = e.layerX;
+      const yVal = e.layerY;
+
+      const yRotation = 20 * ((xVal - width / 2) / width);
+
+      const xRotation = -20 * ((yVal - height / 2) / height);
+
+      const string =
+        "perspective(500px) scale(1.1) rotateX(" +
+        xRotation +
+        "deg) rotateY(" +
+        yRotation +
+        "deg)";
+
+      el.style.transform = string;
+    }
+
+    el.addEventListener("mouseout", function () {
+      el.style.transform = "perspective(500px) scale(1) rotateX(0) rotateY(0)";
+    });
+
+    el.addEventListener("mousedown", function () {
+      el.style.transform =
+        "perspective(500px) scale(0.9) rotateX(0) rotateY(0)";
+    });
+
+    el.addEventListener("mouseup", function () {
+      el.style.transform =
+        "perspective(500px) scale(1.1) rotateX(0) rotateY(0)";
+    });
+  });
+}
+tiltAll();
+
+function olyMouse() {
+  let cursor = document.getElementById("olyCursor");
+  let vidSelf = document.querySelector(".cod--reel");
+  let onVidCon = document.querySelector(".showreelContainer");
+  let swiperVoid = document.querySelector(".mySwiper")
+  window.addEventListener("mousemove", (dets) => {
+    gsap.to(cursor, {
+      left: dets.x,
+      top: dets.y,
+    });
+  });
+  // video
+  onVidCon.addEventListener("mouseenter", () => {
+    cursor.innerHTML = "sound off";
+    cursor.style.width = "90px";
+    cursor.style.height = "25px";
+    cursor.style.borderRadius = "100px";
+  });
+
+  onVidCon.addEventListener("mouseleave", () => {
+    cursor.innerHTML = "";
+    cursor.style.width = "17px";
+    cursor.style.height = "17px";
+    cursor.style.borderRadius = "100%";
+  });
+
+  onVidCon.addEventListener("click", () => {
+    cursor.innerHTML = vidSelf.muted ? "sound on" : "sound off";
+    vidSelf.muted = !vidSelf.muted;
+  });
+
+  // swiper
+  swiperVoid.addEventListener("mouseenter", () => {
+    cursor.innerHTML = "Drag"
+    cursor.style.height = "50px"
+    cursor.style.width = "50px"
+    cursor.style.borderRadius = "100px"
+  })
+
+  swiperVoid.addEventListener("mouseleave", () => {
+    cursor.innerHTML = ""
+    cursor.style.height = "15px"
+    cursor.style.width = "15px"
+    cursor.style.borderRadius = "50%"
+  })
+}
+olyMouse();

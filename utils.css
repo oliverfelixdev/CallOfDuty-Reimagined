@@ -20,6 +20,25 @@
   src: url(./assets/fonts/HitmarkerText-Regular.woff2);
 }
 
+#olyCursor {
+  position: fixed;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Hit-Cond;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  width: 15px;
+  height: 15px;
+  background-color: var(--btn-background);
+  border-radius: 50%;
+  transition: cubic-bezier(0.19, 1, 0.22, 1);
+  mix-blend-mode: difference;
+  pointer-events: none;
+}
+
 .global-texts-Cond {
   font-family: Hit-Cond;
   color: var(--primary-color);
@@ -105,7 +124,7 @@
   flex-direction: column;
 }
 
-.tipi-cod{
+.tipi-cod {
   justify-content: center;
   font-family: Hit-Bold;
   font-size: 1vw;
@@ -127,7 +146,7 @@
   width: fit-content;
 }
 
-.slider-image--banner{
+.slider-image--banner {
   object-fit: cover;
   filter: brightness(0.7);
 }
@@ -142,7 +161,7 @@
   padding-left: 1.5vw;
 }
 
-.mc--spn{
+.mc--spn {
   width: fit-content;
   font-size: 1.6vw;
   font-weight: 500;
@@ -157,6 +176,9 @@
   width: 70%;
 }
 
+.tilt {
+  transition: box-shadow 0.1s, transform 0.1s;
+}
 
 ::-webkit-scrollbar {
   display: none;

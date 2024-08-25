@@ -83,11 +83,11 @@
     font-size: 1.8vw;
   }
   /* --------------------------------------- */
-  .s6-title-con h1{
+  .s6-title-con h1 {
     font-size: 8vw;
   }
-  
-  #glass-container{
+
+  #glass-container {
     width: 95vw;
     height: 80vh;
     position: relative;
@@ -97,16 +97,15 @@
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 1vw;
-    background-image: url('./assets/img/CERBERUS_KA.webp');
+    background-image: url("./assets/img/CERBERUS_KA.webp");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    box-shadow: 
-    0 0 0 4px rgba(255, 255, 255, 0.1), /* Border-like shadow */
-    inset 0 2px 4px rgba(255, 255, 255, 0.1); /* Inset shadow */
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1),
+      /* Border-like shadow */ inset 0 2px 4px rgba(255, 255, 255, 0.1); /* Inset shadow */
   }
-  
-  .g-con-glass-con{
+
+  .g-con-glass-con {
     height: 100%;
     width: 100%;
     background-color: #00000000;
@@ -118,33 +117,85 @@
     gap: 2vw;
     align-items: center;
   }
-  
-  .g-con-glass-con span{
+
+  .g-con-glass-con span {
     font-size: 3.5vw;
     font-family: Hit-Cond;
     text-align: center;
   }
-  
-  .fromer-btn-con{
+
+  .fromer-btn-con {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
   }
-  
-  .pre-btn{
+
+  .pre-btn {
     padding: 1vw 3vw;
     border-radius: 8px;
     border: 1px solid var(--primary-background);
     font-family: Hit-Cond;
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     background-color: #ffffff43;
     backdrop-filter: blur(30px);
     letter-spacing: 1px;
   }
+
+  @media (max-width: 768px) {
+    #footer {
+      height: auto; /* Adjust height for smaller screens */
+      padding: 5vw 2vw; /* Increase padding for better spacing */
+      flex-direction: column; /* Stack elements vertically */
+    }
+
+    .ft-top {
+      flex-direction: column; /* Stack logo and content vertically */
+      align-items: center;
+    }
+
+    #footer a img {
+      scale: 1.2; /* Adjust the scaling of the image */
+    }
+
+    .middle-ft {
+      flex-direction: column; /* Stack elements vertically */
+      align-items: center;
+      margin-top: 3vw; /* Add spacing above the middle section */
+    }
+
+    .mdft-lft {
+      flex-direction: column; /* Stack links vertically */
+      gap: 5px; /* Reduce gap between links */
+      margin-top: 5vw; /* Add spacing above the middle section */
+    }
+
+    .sprtr-ft {
+      height: 1.5vw; /* Adjust separator height */
+      width: 2px;
+      margin: 2vw 0; /* Add vertical spacing around the separator */
+    }
+
+    .bottom-ft {
+      flex-direction: column; /* Stack elements vertically */
+      align-items: center;
+      top: 10%; /* Adjust positioning */
+    }
+
+    .bottom-ft :nth-child(1),
+    .bottom-ft :nth-child(2) {
+      font-size: 0.9em; /* Slightly reduce font size */
+      text-align: center; /* Center text */
+      padding: 1vw 0; /* Increase padding for better touch targets */
+    }
+  }
 }
 
 @media only screen and (max-width: 425px) {
+  #olyCursor {
+    display: none;
+  }
+
   .sidebar {
     width: 95%;
     top: -100%;
@@ -188,7 +239,6 @@
     gap: 0vw;
     flex-direction: column;
     border-radius: 1.5rem;
-    
   }
 
   #logue-container-2 {
@@ -246,7 +296,7 @@
     }
   }
 
-  #section4{
+  #section4 {
     height: 65vh;
     background-color: var(--btn-background);
     display: flex;
@@ -269,8 +319,8 @@
     text-align: justify;
     line-height: 5.5vw;
   }
- 
-  .s5-title-con h1{
+
+  .s5-title-con h1 {
     font-size: 11vw;
   }
 
@@ -305,11 +355,11 @@
   }
 
   /* ------------- */
-  .s6-title-con h1{
+  .s6-title-con h1 {
     font-size: 11vw;
   }
-  
-  #glass-container{
+
+  #glass-container {
     width: 95vw;
     height: 80vh;
     position: relative;
@@ -319,16 +369,15 @@
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 1vw;
-    background-image: url('./assets/img/CERBERUS_KA.webp');
+    background-image: url("./assets/img/CERBERUS_KA.webp");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    box-shadow: 
-    0 0 0 4px rgba(255, 255, 255, 0.1), /* Border-like shadow */
-    inset 0 2px 4px rgba(255, 255, 255, 0.1); /* Inset shadow */
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1),
+      /* Border-like shadow */ inset 0 2px 4px rgba(255, 255, 255, 0.1); /* Inset shadow */
   }
-  
-  .g-con-glass-con{
+
+  .g-con-glass-con {
     height: 100%;
     width: 100%;
     background-color: #00000000;
@@ -340,27 +389,27 @@
     gap: 2vw;
     align-items: center;
   }
-  
-  .g-con-glass-con span{
+
+  .g-con-glass-con span {
     font-size: 6.5vw;
     font-family: Hit-Cond;
     text-align: center;
   }
-  
-  .fromer-btn-con{
+
+  .fromer-btn-con {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
   }
-  
-  .pre-btn{
+
+  .pre-btn {
     font-size: 3vw;
     padding: 1vw 3vw;
     border-radius: 8px;
     border: 1px solid var(--primary-background);
     font-family: Hit-Cond;
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     background-color: #ffffff43;
     backdrop-filter: blur(30px);
     letter-spacing: 1px;
