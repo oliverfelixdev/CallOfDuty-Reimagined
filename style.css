@@ -37,18 +37,6 @@ nav {
   z-index: 999;
 }
 
-/* .navbar-wrapper{} */
-
-/* .nav-child-1{} */
-
-/* .nav-child-1 .l0g0 img{} */
-
-/* .nav-child-1 .actvision-wrapper{} */
-
-/* .nav-child-1 .actvision-wrapper svg{} */
-
-/* .nav-child-2{} */
-
 .sidebar {
   height: 80vh;
   width: 28vw;
@@ -66,7 +54,6 @@ nav {
   transition: all 0.3s ease-in-out;
 }
 
-/* Main Starts Section One 1 only one and 1 */
 #section1 {
   height: 100vh;
   width: 100vw;
@@ -146,25 +133,14 @@ nav {
   text-align: center;
   font-weight: 800;
   -webkit-font-smoothing: antialiased;
-
-  /* Optional: Add these if necessary */
-  background-size: fill; /* Or cover, depending on your design */
-  background-repeat: repeat; /* If you want the GIF to repeat */
+  background-size: fill;
+  background-repeat: repeat; 
 }
-
-/* 
-.section2-wrapper h1 span {
-  text-align: justify;
-  font-family: Hit-Cond;
-}
- */
 
 #section3 {
   min-height: 100vh;
   width: 100vw;
   position: relative;
-  /* background-color: rgba(255, 255, 255, 0.333); */
-  /* padding: 1vw 1vw 5vw 1vw; */
 }
 
 .section3-wrapper {
@@ -228,10 +204,6 @@ nav {
   justify-content: center;
 }
 
-/* .card--body:hover .svg-banner-image {
-  scale: 1;
-}
- */
 .svg-banner-image {
   scale: 1.15;
   transition: all 0.3s;
@@ -271,7 +243,6 @@ nav {
 }
 
 #section4 {
-  /* background-color: rebeccapurple; */
   min-height: 50vh;
   width: 100vw;
   position: relative;
@@ -280,7 +251,6 @@ nav {
 .section4-wrapper {
   width: 100%;
   padding: 6vw 2.3vw 4vw 2.3vw;
-  /* margin-top: 2vw; */
 }
 
 .sub-text {
@@ -327,15 +297,12 @@ nav {
   height: 120vh;
   width: 100vw;
   position: relative;
-  /* background-color: #ff6200; */
-  /* overflow: hidden; */
 }
 
 .section6-wrapper {
   width: 100%;
   padding: 1vw;
   margin-top: 8vw;
-  /* height: 10px; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -349,7 +316,6 @@ nav {
   align-items: center;
   justify-content: center;
   backdrop-filter: blur(1px);
-  /* background-color: darkorange; */
 }
 
 .s6-title-con h1 {
@@ -365,11 +331,7 @@ nav {
   width: 60vw;
   height: 75vh;
   overflow: hidden;
-/*   position: absolute;
-  top: 55%;
-  left: 50%;
-  transform: translate(-50%, -50%);
- */  padding: 1vw;
+  padding: 1vw;
   background-image: url("./assets/img/CERBERUS_KA.webp");
   background-repeat: no-repeat;
   background-size: cover;
@@ -466,9 +428,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* flex-direction: column; */
   gap: 10px;
-  /* background-color: red; */
   margin-top: 4vw;
 }
 

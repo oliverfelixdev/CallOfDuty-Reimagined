@@ -458,7 +458,8 @@ function olyMouse() {
   let cursor = document.getElementById("olyCursor");
   let vidSelf = document.querySelector(".cod--reel");
   let onVidCon = document.querySelector(".showreelContainer");
-  let swiperVoid = document.querySelector(".mySwiper")
+  let swiperVoid = document.querySelector(".mySwiper");
+  let anchoEffectBigCursor = document.querySelectorAll(".on-big-big");
   window.addEventListener("mousemove", (dets) => {
     gsap.to(cursor, {
       left: dets.x,
@@ -498,6 +499,19 @@ function olyMouse() {
     cursor.style.height = "15px"
     cursor.style.width = "15px"
     cursor.style.borderRadius = "50%"
+  })
+
+  // anchor Tags
+  anchoEffectBigCursor.forEach((mmd) => {
+    mmd.addEventListener("mouseenter", () => {
+        cursor.style.height = "22px"
+        cursor.style.width = "22px"
+      })
+
+    mmd.addEventListener("mouseleave", () => {
+        cursor.style.height = "15px"
+        cursor.style.width = "15px"
+      })
   })
 }
 olyMouse();

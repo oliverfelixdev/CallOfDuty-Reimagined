@@ -320,6 +320,10 @@
     line-height: 5.5vw;
   }
 
+  #section5 {
+    min-height: 70vh;
+  }
+
   .s5-title-con h1 {
     font-size: 11vw;
   }
@@ -413,5 +417,11 @@
     background-color: #ffffff43;
     backdrop-filter: blur(30px);
     letter-spacing: 1px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  #section5{
+    height: 60vh;
   }
 }
