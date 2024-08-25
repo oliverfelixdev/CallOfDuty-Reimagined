@@ -488,30 +488,53 @@ function olyMouse() {
 
   // swiper
   swiperVoid.addEventListener("mouseenter", () => {
-    cursor.innerHTML = "Drag"
-    cursor.style.height = "50px"
-    cursor.style.width = "50px"
-    cursor.style.borderRadius = "100px"
-  })
+    cursor.innerHTML = "Drag";
+    cursor.style.height = "50px";
+    cursor.style.width = "50px";
+    cursor.style.borderRadius = "100px";
+  });
 
   swiperVoid.addEventListener("mouseleave", () => {
-    cursor.innerHTML = ""
-    cursor.style.height = "15px"
-    cursor.style.width = "15px"
-    cursor.style.borderRadius = "50%"
-  })
+    cursor.innerHTML = "";
+    cursor.style.height = "15px";
+    cursor.style.width = "15px";
+    cursor.style.borderRadius = "50%";
+  });
 
   // anchor Tags
   anchoEffectBigCursor.forEach((mmd) => {
     mmd.addEventListener("mouseenter", () => {
-        cursor.style.height = "22px"
-        cursor.style.width = "22px"
-      })
+      cursor.style.height = "22px";
+      cursor.style.width = "22px";
+    });
 
     mmd.addEventListener("mouseleave", () => {
-        cursor.style.height = "15px"
-        cursor.style.width = "15px"
-      })
-  })
+      cursor.style.height = "15px";
+      cursor.style.width = "15px";
+    });
+  });
 }
 olyMouse();
+
+let loaderFrame = document.getElementById('loader');
+gsap.to(loaderFrame, {
+  duration: 3,
+  delay: 3,
+  scaleY: 100,
+  scaleX: 100,
+  ease: Expo.easeInOut,
+  onComplete: function () {
+    gsap.to(loaderFrame, {
+      duration: 0.5,
+      opacity: 0,
+      ease: "power1.out",
+      onComplete: function () {
+        gsap.set(loaderFrame, {
+          duration: 1,
+          opacity: 0,
+          display: "none",
+        });
+      },
+    });
+  },
+});
