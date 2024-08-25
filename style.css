@@ -14,16 +14,7 @@ body {
 #webbyoly {
   position: relative;
   overflow-x: hidden;
-  /* background-color: var(--secondary-background); */
-  /* background: url('./assets/img/98grain321msa.webp'); */
-  /* background-position: center; */
-  /* background-size: cover; */
-  background-repeat: no-repeat;
-  /* background-attachment: fixed; */
-  background-image: url("./assets/img/98grain321msa.webp");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background-color: var(--secondary-background);
 }
 
 .canvas {
@@ -35,8 +26,15 @@ body {
   overflow: hidden;
 }
 
+#canvas-noise {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
 nav {
   display: none;
+  z-index: 999;
 }
 
 /* .navbar-wrapper{} */
@@ -61,7 +59,7 @@ nav {
   perspective: 1000px;
   transform-style: preserve-3d;
   flex-shrink: 0;
-  /* z-index: 999; */
+  z-index: 9999;
 }
 
 .btn-close-menu {
@@ -104,7 +102,7 @@ nav {
 }
 
 #section2 {
-  z-index: 999;
+  z-index: 9;
   height: 55vh;
   width: 100%;
   overflow-x: hidden;
@@ -150,7 +148,7 @@ nav {
   -webkit-font-smoothing: antialiased;
 
   /* Optional: Add these if necessary */
-  background-size: contain; /* Or cover, depending on your design */
+  background-size: fill; /* Or cover, depending on your design */
   background-repeat: repeat; /* If you want the GIF to repeat */
 }
 
@@ -322,5 +320,94 @@ nav {
   color: var(--primary-color);
   font-family: Hit-Cond;
   font-weight: 900;
+  letter-spacing: 1px;
+}
+
+#section6{
+  height: 120vh;
+  width: 100vw;
+  position: relative;
+  /* background-color: #ff6200; */
+  /* overflow: hidden; */
+}
+
+.section6-wrapper{
+  width: 100%;
+  padding: 1vw;
+  margin-top: 8vw;
+  /* height: 10px; */
+}
+
+.s6-title-con{
+  padding: 0.5vw 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(1px);
+  /* background-color: darkorange; */
+}
+
+.s6-title-con h1{
+  font-size: 6vw;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  font-family: Hit-Cond;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+#glass-container{
+  width: 50vw;
+  height: 75vh;
+  position: relative;
+  overflow: hidden;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1vw;
+  background-image: url('./assets/img/CERBERUS_KA.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 
+  0 0 0 4px rgba(255, 255, 255, 0.1), /* Border-like shadow */
+  inset 0 2px 4px rgba(255, 255, 255, 0.1); /* Inset shadow */
+}
+
+.g-con-glass-con{
+  height: 100%;
+  width: 100%;
+  background-color: #00000000;
+  backdrop-filter: blur(60px);
+  color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2vw;
+  align-items: center;
+}
+
+.g-con-glass-con span{
+  font-size: 2.5vw;
+  font-family: Hit-Cond;
+  text-align: center;
+}
+
+.fromer-btn-con{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.pre-btn{
+  padding: 1vw 3vw;
+  border-radius: 8px;
+  border: 1px solid var(--primary-background);
+  font-family: Hit-Cond;
+  transition: all .3s ease-in-out;
+  background-color: #ffffff43;
+  backdrop-filter: blur(30px);
   letter-spacing: 1px;
 }

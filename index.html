@@ -15,8 +15,11 @@
 <body>
   <div id="webbyoly">
     <canvas class="canvas"></canvas>
+    <div class="noisepaker">
+      <canvas id="canvas-noise"></canvas>
+    </div>
     <header class="relative w-full header-header">
-      <nav class="nav-bar h-[15vh] w-full fixed top-0 left-0 items-center justify-center z-10 shadow-lg">
+      <nav class="nav-bar h-[15vh] w-full fixed top-0 left-0 items-center justify-center shadow-lg">
         <div class="navbar-wrapper flex items-center justify-center min-w-[93%] h-[100%] ">
           <div class="nav-child-1 flex items-center justify-start gap-20 h-full w-[50%]">
             <a href="index.html" class="l0g0">
@@ -52,7 +55,7 @@
           </div>
         </div>
       </nav>
-      <div class="sidebar rounded-2xl backdrop-blur-md shadow-md z-20">
+      <div class="sidebar rounded-2xl backdrop-blur-md shadow-md">
         <div
           class="sidebar-wrapper h-full w-full backdrop-blur-md p-3 rounded-2xl flex flex-col items-start justify-between">
           <div class="sidebar-child-top flex items-center justify-between w-full">
@@ -121,7 +124,7 @@
       <div class="section1--wrapper">
         <div class="showreelContainer rounded-2xl text-white video-container">
           <video class="cod--reel z-10 lazy" loop muted src="./assets/identities/main471280trailer3297r.mp4"
-            poster="./assets/img/poster-videoBO6_LP-meta_image.webp"></video>
+            poster="./assets/img/CERBERUS_KA.webp"></video>
           <span class="reelTip absolute z-20 bottom-0 p-4 font-[Hit-Cond] text-md mix-blend-difference">CALL OF DUTY
             <br>BLACK OPS6</span>
         </div>
@@ -280,9 +283,8 @@
                     viewBox="0 0 1200 571.7" width="800" height="430.7">
                     <path fill="none" stroke="e00606" stroke-width="5"
                       d="M1140 30.8c28.3 0 42.4 0 51.2 8.8 8.8 8.8 8.8 23 8.8 51.3v338.6c0 28.4 0 42.5-8.8 51.3-8.8 8.8-22.9 8.8-51.2 8.8h-66.4c-10.1 0-15.1 0-19.2 1.2-9.8 2.9-17.5 10.6-20.4 20.4-1.2 4.1-1.2 9.2-1.2 19.3s0 15.2-1.2 19.3c-2.9 9.9-10.6 17.6-20.4 20.4-4.1 1.2-9.2 1.2-19.3 1.2H60c-28.3 0-42.4 0-51.2-8.8C0 554 0 539.9 0 511.5V60.2C0 31.8 0 17.6 8.8 8.8 17.6 0 31.7 0 60 0h417.1c10.7 0 16.1 0 21 1.8.5.2 1 .4 1.6.6 4.8 2 8.8 5.7 16.6 13 7.9 7.3 11.8 11 16.6 13 .5.2 1 .4 1.6.6 4.9 1.8 10.3 1.8 21 1.8H1140z" />
-                    <image xlink:href="./assets/img/CERBERUS_KA.webp" x="0"
-                      y="0" width="1200" height="571.7" preserveAspectRatio="xMidYMid slice"
-                      clip-path="url(#clipPath)" class="slider-image--banner" />
+                    <image xlink:href="./assets/img/CERBERUS_KA.webp" x="0" y="0" width="1200" height="571.7"
+                      preserveAspectRatio="xMidYMid slice" clip-path="url(#clipPath)" class="slider-image--banner" />
                     <clipPath id="clipPath">
                       <path
                         d="M1140 30.8c28.3 0 42.4 0 51.2 8.8 8.8 8.8 8.8 23 8.8 51.3v338.6c0 28.4 0 42.5-8.8 51.3-8.8 8.8-22.9 8.8-51.2 8.8h-66.4c-10.1 0-15.1 0-19.2 1.2-9.8 2.9-17.5 10.6-20.4 20.4-1.2 4.1-1.2 9.2-1.2 19.3s0 15.2-1.2 19.3c-2.9 9.9-10.6 17.6-20.4 20.4-4.1 1.2-9.2 1.2-19.3 1.2H60c-28.3 0-42.4 0-51.2-8.8C0 554 0 539.9 0 511.5V60.2C0 31.8 0 17.6 8.8 8.8 17.6 0 31.7 0 60 0h417.1c10.7 0 16.1 0 21 1.8.5.2 1 .4 1.6.6 4.8 2 8.8 5.7 16.6 13 7.9 7.3 11.8 11 16.6 13 .5.2 1 .4 1.6.6 4.9 1.8 10.3 1.8 21 1.8H1140z" />
@@ -291,7 +293,8 @@
                 </div>
                 <div class="mc--child-2-bottom">
                   <span class="mc--spn" id="mc--para-1">BLACK OPS6 - VIPER</span>
-                  <p class="mc--para" id="mc--spn-1">Viper, a master of deception, uses decoys and smoke grenades to outmaneuver opponents, perfect for confusing and ambushing enemies.</p>
+                  <p class="mc--para" id="mc--spn-1">Viper, a master of deception, uses decoys and smoke grenades to
+                    outmaneuver opponents, perfect for confusing and ambushing enemies.</p>
                 </div>
               </div>
             </div>
@@ -299,17 +302,22 @@
               <div class="mc--container" id="mc--container-1">
                 <div class="tipi-cod">OPS6</div>
                 <div class="mc--child-1-top">
-                  <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 571.7" width="800" height="430.7">
-                    <path fill="none" stroke="e00606" stroke-width="5" d="M1140 30.8c28.3 0 42.4 0 51.2 8.8 8.8 8.8 8.8 23 8.8 51.3v338.6c0 28.4 0 42.5-8.8 51.3-8.8 8.8-22.9 8.8-51.2 8.8h-66.4c-10.1 0-15.1 0-19.2 1.2-9.8 2.9-17.5 10.6-20.4 20.4-1.2 4.1-1.2 9.2-1.2 19.3s0 15.2-1.2 19.3c-2.9 9.9-10.6 17.6-20.4 20.4-4.1 1.2-9.2 1.2-19.3 1.2H60c-28.3 0-42.4 0-51.2-8.8C0 554 0 539.9 0 511.5V60.2C0 31.8 0 17.6 8.8 8.8 17.6 0 31.7 0 60 0h417.1c10.7 0 16.1 0 21 1.8.5.2 1 .4 1.6.6 4.8 2 8.8 5.7 16.6 13 7.9 7.3 11.8 11 16.6 13 .5.2 1 .4 1.6.6 4.9 1.8 10.3 1.8 21 1.8H1140z" />
-                    <image xlink:href="./assets/img/bo6-wpn-1.jpg" x="0" y="0" width="1200" height="571.7" preserveAspectRatio="xMidYMid slice" clip-path="url(#clipPath)" class="slider-image--banner"/>
+                  <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 1200 571.7" width="800" height="430.7">
+                    <path fill="none" stroke="e00606" stroke-width="5"
+                      d="M1140 30.8c28.3 0 42.4 0 51.2 8.8 8.8 8.8 8.8 23 8.8 51.3v338.6c0 28.4 0 42.5-8.8 51.3-8.8 8.8-22.9 8.8-51.2 8.8h-66.4c-10.1 0-15.1 0-19.2 1.2-9.8 2.9-17.5 10.6-20.4 20.4-1.2 4.1-1.2 9.2-1.2 19.3s0 15.2-1.2 19.3c-2.9 9.9-10.6 17.6-20.4 20.4-4.1 1.2-9.2 1.2-19.3 1.2H60c-28.3 0-42.4 0-51.2-8.8C0 554 0 539.9 0 511.5V60.2C0 31.8 0 17.6 8.8 8.8 17.6 0 31.7 0 60 0h417.1c10.7 0 16.1 0 21 1.8.5.2 1 .4 1.6.6 4.8 2 8.8 5.7 16.6 13 7.9 7.3 11.8 11 16.6 13 .5.2 1 .4 1.6.6 4.9 1.8 10.3 1.8 21 1.8H1140z" />
+                    <image xlink:href="./assets/img/bo6-wpn-1.jpg" x="0" y="0" width="1200" height="571.7"
+                      preserveAspectRatio="xMidYMid slice" clip-path="url(#clipPath)" class="slider-image--banner" />
                     <clipPath id="clipPath">
-                      <path d="M1140 30.8c28.3 0 42.4 0 51.2 8.8 8.8 8.8 8.8 23 8.8 51.3v338.6c0 28.4 0 42.5-8.8 51.3-8.8 8.8-22.9 8.8-51.2 8.8h-66.4c-10.1 0-15.1 0-19.2 1.2-9.8 2.9-17.5 10.6-20.4 20.4-1.2 4.1-1.2 9.2-1.2 19.3s0 15.2-1.2 19.3c-2.9 9.9-10.6 17.6-20.4 20.4-4.1 1.2-9.2 1.2-19.3 1.2H60c-28.3 0-42.4 0-51.2-8.8C0 554 0 539.9 0 511.5V60.2C0 31.8 0 17.6 8.8 8.8 17.6 0 31.7 0 60 0h417.1c10.7 0 16.1 0 21 1.8.5.2 1 .4 1.6.6 4.8 2 8.8 5.7 16.6 13 7.9 7.3 11.8 11 16.6 13 .5.2 1 .4 1.6.6 4.9 1.8 10.3 1.8 21 1.8H1140z" />
+                      <path
+                        d="M1140 30.8c28.3 0 42.4 0 51.2 8.8 8.8 8.8 8.8 23 8.8 51.3v338.6c0 28.4 0 42.5-8.8 51.3-8.8 8.8-22.9 8.8-51.2 8.8h-66.4c-10.1 0-15.1 0-19.2 1.2-9.8 2.9-17.5 10.6-20.4 20.4-1.2 4.1-1.2 9.2-1.2 19.3s0 15.2-1.2 19.3c-2.9 9.9-10.6 17.6-20.4 20.4-4.1 1.2-9.2 1.2-19.3 1.2H60c-28.3 0-42.4 0-51.2-8.8C0 554 0 539.9 0 511.5V60.2C0 31.8 0 17.6 8.8 8.8 17.6 0 31.7 0 60 0h417.1c10.7 0 16.1 0 21 1.8.5.2 1 .4 1.6.6 4.8 2 8.8 5.7 16.6 13 7.9 7.3 11.8 11 16.6 13 .5.2 1 .4 1.6.6 4.9 1.8 10.3 1.8 21 1.8H1140z" />
                     </clipPath>
                   </svg>
                 </div>
                 <div class="mc--child-2-bottom">
                   <span class="mc--spn" id="mc--para-1">BLACK OPS6 - SCA-H</span>
-                  <p class="mc--para" id="mc--spn-1">This dominates mid-range combat, offering unparalleled firepower with high recoil control, perfect for versatile assault gameplay</p>
+                  <p class="mc--para" id="mc--spn-1">This dominates mid-range combat, offering unparalleled firepower
+                    with high recoil control, perfect for versatile assault gameplay</p>
                 </div>
               </div>
             </div>
@@ -317,17 +325,22 @@
               <div class="mc--container" id="mc--container-1">
                 <div class="tipi-cod">OPS6</div>
                 <div class="mc--child-1-top">
-                  <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 571.7" width="800" height="430.7">
-                    <path fill="none" stroke="e00606" stroke-width="5" d="M1140 30.8c28.3 0 42.4 0 51.2 8.8 8.8 8.8 8.8 23 8.8 51.3v338.6c0 28.4 0 42.5-8.8 51.3-8.8 8.8-22.9 8.8-51.2 8.8h-66.4c-10.1 0-15.1 0-19.2 1.2-9.8 2.9-17.5 10.6-20.4 20.4-1.2 4.1-1.2 9.2-1.2 19.3s0 15.2-1.2 19.3c-2.9 9.9-10.6 17.6-20.4 20.4-4.1 1.2-9.2 1.2-19.3 1.2H60c-28.3 0-42.4 0-51.2-8.8C0 554 0 539.9 0 511.5V60.2C0 31.8 0 17.6 8.8 8.8 17.6 0 31.7 0 60 0h417.1c10.7 0 16.1 0 21 1.8.5.2 1 .4 1.6.6 4.8 2 8.8 5.7 16.6 13 7.9 7.3 11.8 11 16.6 13 .5.2 1 .4 1.6.6 4.9 1.8 10.3 1.8 21 1.8H1140z" />
-                    <image xlink:href="./assets/img/bo6-chr--bnr-2.webp" x="0" y="0" width="1200" height="571.7" preserveAspectRatio="xMidYMid slice" clip-path="url(#clipPath)" class="slider-image--banner"/>
+                  <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 1200 571.7" width="800" height="430.7">
+                    <path fill="none" stroke="e00606" stroke-width="5"
+                      d="M1140 30.8c28.3 0 42.4 0 51.2 8.8 8.8 8.8 8.8 23 8.8 51.3v338.6c0 28.4 0 42.5-8.8 51.3-8.8 8.8-22.9 8.8-51.2 8.8h-66.4c-10.1 0-15.1 0-19.2 1.2-9.8 2.9-17.5 10.6-20.4 20.4-1.2 4.1-1.2 9.2-1.2 19.3s0 15.2-1.2 19.3c-2.9 9.9-10.6 17.6-20.4 20.4-4.1 1.2-9.2 1.2-19.3 1.2H60c-28.3 0-42.4 0-51.2-8.8C0 554 0 539.9 0 511.5V60.2C0 31.8 0 17.6 8.8 8.8 17.6 0 31.7 0 60 0h417.1c10.7 0 16.1 0 21 1.8.5.2 1 .4 1.6.6 4.8 2 8.8 5.7 16.6 13 7.9 7.3 11.8 11 16.6 13 .5.2 1 .4 1.6.6 4.9 1.8 10.3 1.8 21 1.8H1140z" />
+                    <image xlink:href="./assets/img/bo6-chr--bnr-2.webp" x="0" y="0" width="1200" height="571.7"
+                      preserveAspectRatio="xMidYMid slice" clip-path="url(#clipPath)" class="slider-image--banner" />
                     <clipPath id="clipPath">
-                      <path d="M1140 30.8c28.3 0 42.4 0 51.2 8.8 8.8 8.8 8.8 23 8.8 51.3v338.6c0 28.4 0 42.5-8.8 51.3-8.8 8.8-22.9 8.8-51.2 8.8h-66.4c-10.1 0-15.1 0-19.2 1.2-9.8 2.9-17.5 10.6-20.4 20.4-1.2 4.1-1.2 9.2-1.2 19.3s0 15.2-1.2 19.3c-2.9 9.9-10.6 17.6-20.4 20.4-4.1 1.2-9.2 1.2-19.3 1.2H60c-28.3 0-42.4 0-51.2-8.8C0 554 0 539.9 0 511.5V60.2C0 31.8 0 17.6 8.8 8.8 17.6 0 31.7 0 60 0h417.1c10.7 0 16.1 0 21 1.8.5.2 1 .4 1.6.6 4.8 2 8.8 5.7 16.6 13 7.9 7.3 11.8 11 16.6 13 .5.2 1 .4 1.6.6 4.9 1.8 10.3 1.8 21 1.8H1140z" />
+                      <path
+                        d="M1140 30.8c28.3 0 42.4 0 51.2 8.8 8.8 8.8 8.8 23 8.8 51.3v338.6c0 28.4 0 42.5-8.8 51.3-8.8 8.8-22.9 8.8-51.2 8.8h-66.4c-10.1 0-15.1 0-19.2 1.2-9.8 2.9-17.5 10.6-20.4 20.4-1.2 4.1-1.2 9.2-1.2 19.3s0 15.2-1.2 19.3c-2.9 9.9-10.6 17.6-20.4 20.4-4.1 1.2-9.2 1.2-19.3 1.2H60c-28.3 0-42.4 0-51.2-8.8C0 554 0 539.9 0 511.5V60.2C0 31.8 0 17.6 8.8 8.8 17.6 0 31.7 0 60 0h417.1c10.7 0 16.1 0 21 1.8.5.2 1 .4 1.6.6 4.8 2 8.8 5.7 16.6 13 7.9 7.3 11.8 11 16.6 13 .5.2 1 .4 1.6.6 4.9 1.8 10.3 1.8 21 1.8H1140z" />
                     </clipPath>
                   </svg>
                 </div>
                 <div class="mc--child-2-bottom">
                   <span class="mc--spn" id="mc--para-1">BLACK OPS6 - RAVEN</span>
-                  <p class="mc--para" id="mc--spn-1">Raven, a stealth operative, excels in silent takedowns, using advanced camouflage and precision, ideal for covert operations.</p>
+                  <p class="mc--para" id="mc--spn-1">Raven, a stealth operative, excels in silent takedowns, using
+                    advanced camouflage and precision, ideal for covert operations.</p>
                 </div>
               </div>
             </div>
@@ -335,17 +348,22 @@
               <div class="mc--container" id="mc--container-1">
                 <div class="tipi-cod">OPS6</div>
                 <div class="mc--child-1-top">
-                  <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 571.7" width="800" height="430.7">
-                    <path fill="none" stroke="e00606" stroke-width="5" d="M1140 30.8c28.3 0 42.4 0 51.2 8.8 8.8 8.8 8.8 23 8.8 51.3v338.6c0 28.4 0 42.5-8.8 51.3-8.8 8.8-22.9 8.8-51.2 8.8h-66.4c-10.1 0-15.1 0-19.2 1.2-9.8 2.9-17.5 10.6-20.4 20.4-1.2 4.1-1.2 9.2-1.2 19.3s0 15.2-1.2 19.3c-2.9 9.9-10.6 17.6-20.4 20.4-4.1 1.2-9.2 1.2-19.3 1.2H60c-28.3 0-42.4 0-51.2-8.8C0 554 0 539.9 0 511.5V60.2C0 31.8 0 17.6 8.8 8.8 17.6 0 31.7 0 60 0h417.1c10.7 0 16.1 0 21 1.8.5.2 1 .4 1.6.6 4.8 2 8.8 5.7 16.6 13 7.9 7.3 11.8 11 16.6 13 .5.2 1 .4 1.6.6 4.9 1.8 10.3 1.8 21 1.8H1140z" />
-                    <image xlink:href="./assets/img/bo6-wpn-2.png" x="0" y="0" width="1200" height="571.7" preserveAspectRatio="xMidYMid slice" clip-path="url(#clipPath)" class="slider-image--banner"/>
+                  <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 1200 571.7" width="800" height="430.7">
+                    <path fill="none" stroke="e00606" stroke-width="5"
+                      d="M1140 30.8c28.3 0 42.4 0 51.2 8.8 8.8 8.8 8.8 23 8.8 51.3v338.6c0 28.4 0 42.5-8.8 51.3-8.8 8.8-22.9 8.8-51.2 8.8h-66.4c-10.1 0-15.1 0-19.2 1.2-9.8 2.9-17.5 10.6-20.4 20.4-1.2 4.1-1.2 9.2-1.2 19.3s0 15.2-1.2 19.3c-2.9 9.9-10.6 17.6-20.4 20.4-4.1 1.2-9.2 1.2-19.3 1.2H60c-28.3 0-42.4 0-51.2-8.8C0 554 0 539.9 0 511.5V60.2C0 31.8 0 17.6 8.8 8.8 17.6 0 31.7 0 60 0h417.1c10.7 0 16.1 0 21 1.8.5.2 1 .4 1.6.6 4.8 2 8.8 5.7 16.6 13 7.9 7.3 11.8 11 16.6 13 .5.2 1 .4 1.6.6 4.9 1.8 10.3 1.8 21 1.8H1140z" />
+                    <image xlink:href="./assets/img/bo6-wpn-2.png" x="0" y="0" width="1200" height="571.7"
+                      preserveAspectRatio="xMidYMid slice" clip-path="url(#clipPath)" class="slider-image--banner" />
                     <clipPath id="clipPath">
-                      <path d="M1140 30.8c28.3 0 42.4 0 51.2 8.8 8.8 8.8 8.8 23 8.8 51.3v338.6c0 28.4 0 42.5-8.8 51.3-8.8 8.8-22.9 8.8-51.2 8.8h-66.4c-10.1 0-15.1 0-19.2 1.2-9.8 2.9-17.5 10.6-20.4 20.4-1.2 4.1-1.2 9.2-1.2 19.3s0 15.2-1.2 19.3c-2.9 9.9-10.6 17.6-20.4 20.4-4.1 1.2-9.2 1.2-19.3 1.2H60c-28.3 0-42.4 0-51.2-8.8C0 554 0 539.9 0 511.5V60.2C0 31.8 0 17.6 8.8 8.8 17.6 0 31.7 0 60 0h417.1c10.7 0 16.1 0 21 1.8.5.2 1 .4 1.6.6 4.8 2 8.8 5.7 16.6 13 7.9 7.3 11.8 11 16.6 13 .5.2 1 .4 1.6.6 4.9 1.8 10.3 1.8 21 1.8H1140z" />
+                      <path
+                        d="M1140 30.8c28.3 0 42.4 0 51.2 8.8 8.8 8.8 8.8 23 8.8 51.3v338.6c0 28.4 0 42.5-8.8 51.3-8.8 8.8-22.9 8.8-51.2 8.8h-66.4c-10.1 0-15.1 0-19.2 1.2-9.8 2.9-17.5 10.6-20.4 20.4-1.2 4.1-1.2 9.2-1.2 19.3s0 15.2-1.2 19.3c-2.9 9.9-10.6 17.6-20.4 20.4-4.1 1.2-9.2 1.2-19.3 1.2H60c-28.3 0-42.4 0-51.2-8.8C0 554 0 539.9 0 511.5V60.2C0 31.8 0 17.6 8.8 8.8 17.6 0 31.7 0 60 0h417.1c10.7 0 16.1 0 21 1.8.5.2 1 .4 1.6.6 4.8 2 8.8 5.7 16.6 13 7.9 7.3 11.8 11 16.6 13 .5.2 1 .4 1.6.6 4.9 1.8 10.3 1.8 21 1.8H1140z" />
                     </clipPath>
                   </svg>
                 </div>
                 <div class="mc--child-2-bottom">
                   <span class="mc--spn" id="mc--para-1">BLACK OPS6 - M13B</span>
-                  <p class="mc--para" id="mc--spn-1">Some provide devastating close-range damage, perfect for clearing rooms and dominating tight quarters in fast-paced battles.</p>
+                  <p class="mc--para" id="mc--spn-1">Some provide devastating close-range damage, perfect for clearing
+                    rooms and dominating tight quarters in fast-paced battles.</p>
                 </div>
               </div>
             </div>
@@ -353,17 +371,22 @@
               <div class="mc--container" id="mc--container-1">
                 <div class="tipi-cod">OPS6</div>
                 <div class="mc--child-1-top">
-                  <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 571.7" width="800" height="430.7">
-                    <path fill="none" stroke="e00606" stroke-width="5" d="M1140 30.8c28.3 0 42.4 0 51.2 8.8 8.8 8.8 8.8 23 8.8 51.3v338.6c0 28.4 0 42.5-8.8 51.3-8.8 8.8-22.9 8.8-51.2 8.8h-66.4c-10.1 0-15.1 0-19.2 1.2-9.8 2.9-17.5 10.6-20.4 20.4-1.2 4.1-1.2 9.2-1.2 19.3s0 15.2-1.2 19.3c-2.9 9.9-10.6 17.6-20.4 20.4-4.1 1.2-9.2 1.2-19.3 1.2H60c-28.3 0-42.4 0-51.2-8.8C0 554 0 539.9 0 511.5V60.2C0 31.8 0 17.6 8.8 8.8 17.6 0 31.7 0 60 0h417.1c10.7 0 16.1 0 21 1.8.5.2 1 .4 1.6.6 4.8 2 8.8 5.7 16.6 13 7.9 7.3 11.8 11 16.6 13 .5.2 1 .4 1.6.6 4.9 1.8 10.3 1.8 21 1.8H1140z" />
-                    <image xlink:href="./assets/img/bo6-chr--bnr-1.jpeg" x="0" y="0" width="1200" height="571.7" preserveAspectRatio="xMidYMid slice" clip-path="url(#clipPath)" class="slider-image--banner"/>
+                  <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 1200 571.7" width="800" height="430.7">
+                    <path fill="none" stroke="e00606" stroke-width="5"
+                      d="M1140 30.8c28.3 0 42.4 0 51.2 8.8 8.8 8.8 8.8 23 8.8 51.3v338.6c0 28.4 0 42.5-8.8 51.3-8.8 8.8-22.9 8.8-51.2 8.8h-66.4c-10.1 0-15.1 0-19.2 1.2-9.8 2.9-17.5 10.6-20.4 20.4-1.2 4.1-1.2 9.2-1.2 19.3s0 15.2-1.2 19.3c-2.9 9.9-10.6 17.6-20.4 20.4-4.1 1.2-9.2 1.2-19.3 1.2H60c-28.3 0-42.4 0-51.2-8.8C0 554 0 539.9 0 511.5V60.2C0 31.8 0 17.6 8.8 8.8 17.6 0 31.7 0 60 0h417.1c10.7 0 16.1 0 21 1.8.5.2 1 .4 1.6.6 4.8 2 8.8 5.7 16.6 13 7.9 7.3 11.8 11 16.6 13 .5.2 1 .4 1.6.6 4.9 1.8 10.3 1.8 21 1.8H1140z" />
+                    <image xlink:href="./assets/img/bo6-chr--bnr-1.jpeg" x="0" y="0" width="1200" height="571.7"
+                      preserveAspectRatio="xMidYMid slice" clip-path="url(#clipPath)" class="slider-image--banner" />
                     <clipPath id="clipPath">
-                      <path d="M1140 30.8c28.3 0 42.4 0 51.2 8.8 8.8 8.8 8.8 23 8.8 51.3v338.6c0 28.4 0 42.5-8.8 51.3-8.8 8.8-22.9 8.8-51.2 8.8h-66.4c-10.1 0-15.1 0-19.2 1.2-9.8 2.9-17.5 10.6-20.4 20.4-1.2 4.1-1.2 9.2-1.2 19.3s0 15.2-1.2 19.3c-2.9 9.9-10.6 17.6-20.4 20.4-4.1 1.2-9.2 1.2-19.3 1.2H60c-28.3 0-42.4 0-51.2-8.8C0 554 0 539.9 0 511.5V60.2C0 31.8 0 17.6 8.8 8.8 17.6 0 31.7 0 60 0h417.1c10.7 0 16.1 0 21 1.8.5.2 1 .4 1.6.6 4.8 2 8.8 5.7 16.6 13 7.9 7.3 11.8 11 16.6 13 .5.2 1 .4 1.6.6 4.9 1.8 10.3 1.8 21 1.8H1140z" />
+                      <path
+                        d="M1140 30.8c28.3 0 42.4 0 51.2 8.8 8.8 8.8 8.8 23 8.8 51.3v338.6c0 28.4 0 42.5-8.8 51.3-8.8 8.8-22.9 8.8-51.2 8.8h-66.4c-10.1 0-15.1 0-19.2 1.2-9.8 2.9-17.5 10.6-20.4 20.4-1.2 4.1-1.2 9.2-1.2 19.3s0 15.2-1.2 19.3c-2.9 9.9-10.6 17.6-20.4 20.4-4.1 1.2-9.2 1.2-19.3 1.2H60c-28.3 0-42.4 0-51.2-8.8C0 554 0 539.9 0 511.5V60.2C0 31.8 0 17.6 8.8 8.8 17.6 0 31.7 0 60 0h417.1c10.7 0 16.1 0 21 1.8.5.2 1 .4 1.6.6 4.8 2 8.8 5.7 16.6 13 7.9 7.3 11.8 11 16.6 13 .5.2 1 .4 1.6.6 4.9 1.8 10.3 1.8 21 1.8H1140z" />
                     </clipPath>
                   </svg>
                 </div>
                 <div class="mc--child-2-bottom">
                   <span class="mc--spn" id="mc--para-1">BLACK OPS6 - BLAZE</span>
-                  <p class="mc--para" id="mc--spn-1">Blaze, the explosive expert, uses C4 and grenades to cause chaos, specializing in area denial and trap-based strategies.</p>
+                  <p class="mc--para" id="mc--spn-1">Blaze, the explosive expert, uses C4 and grenades to cause chaos,
+                    specializing in area denial and trap-based strategies.</p>
                 </div>
               </div>
             </div>
@@ -371,19 +394,40 @@
               <div class="mc--container" id="mc--container-1">
                 <div class="tipi-cod">OPS6</div>
                 <div class="mc--child-1-top">
-                  <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 571.7" width="800" height="430.7">
-                    <path fill="none" stroke="e00606" stroke-width="5" d="M1140 30.8c28.3 0 42.4 0 51.2 8.8 8.8 8.8 8.8 23 8.8 51.3v338.6c0 28.4 0 42.5-8.8 51.3-8.8 8.8-22.9 8.8-51.2 8.8h-66.4c-10.1 0-15.1 0-19.2 1.2-9.8 2.9-17.5 10.6-20.4 20.4-1.2 4.1-1.2 9.2-1.2 19.3s0 15.2-1.2 19.3c-2.9 9.9-10.6 17.6-20.4 20.4-4.1 1.2-9.2 1.2-19.3 1.2H60c-28.3 0-42.4 0-51.2-8.8C0 554 0 539.9 0 511.5V60.2C0 31.8 0 17.6 8.8 8.8 17.6 0 31.7 0 60 0h417.1c10.7 0 16.1 0 21 1.8.5.2 1 .4 1.6.6 4.8 2 8.8 5.7 16.6 13 7.9 7.3 11.8 11 16.6 13 .5.2 1 .4 1.6.6 4.9 1.8 10.3 1.8 21 1.8H1140z" />
-                    <image xlink:href="./assets/img/bo6-wpn-3.jpg" x="0" y="0" width="1200" height="571.7" preserveAspectRatio="xMidYMid slice" clip-path="url(#clipPath)" class="slider-image--banner"/>
+                  <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 1200 571.7" width="800" height="430.7">
+                    <path fill="none" stroke="e00606" stroke-width="5"
+                      d="M1140 30.8c28.3 0 42.4 0 51.2 8.8 8.8 8.8 8.8 23 8.8 51.3v338.6c0 28.4 0 42.5-8.8 51.3-8.8 8.8-22.9 8.8-51.2 8.8h-66.4c-10.1 0-15.1 0-19.2 1.2-9.8 2.9-17.5 10.6-20.4 20.4-1.2 4.1-1.2 9.2-1.2 19.3s0 15.2-1.2 19.3c-2.9 9.9-10.6 17.6-20.4 20.4-4.1 1.2-9.2 1.2-19.3 1.2H60c-28.3 0-42.4 0-51.2-8.8C0 554 0 539.9 0 511.5V60.2C0 31.8 0 17.6 8.8 8.8 17.6 0 31.7 0 60 0h417.1c10.7 0 16.1 0 21 1.8.5.2 1 .4 1.6.6 4.8 2 8.8 5.7 16.6 13 7.9 7.3 11.8 11 16.6 13 .5.2 1 .4 1.6.6 4.9 1.8 10.3 1.8 21 1.8H1140z" />
+                    <image xlink:href="./assets/img/bo6-wpn-3.jpg" x="0" y="0" width="1200" height="571.7"
+                      preserveAspectRatio="xMidYMid slice" clip-path="url(#clipPath)" class="slider-image--banner" />
                     <clipPath id="clipPath">
-                      <path d="M1140 30.8c28.3 0 42.4 0 51.2 8.8 8.8 8.8 8.8 23 8.8 51.3v338.6c0 28.4 0 42.5-8.8 51.3-8.8 8.8-22.9 8.8-51.2 8.8h-66.4c-10.1 0-15.1 0-19.2 1.2-9.8 2.9-17.5 10.6-20.4 20.4-1.2 4.1-1.2 9.2-1.2 19.3s0 15.2-1.2 19.3c-2.9 9.9-10.6 17.6-20.4 20.4-4.1 1.2-9.2 1.2-19.3 1.2H60c-28.3 0-42.4 0-51.2-8.8C0 554 0 539.9 0 511.5V60.2C0 31.8 0 17.6 8.8 8.8 17.6 0 31.7 0 60 0h417.1c10.7 0 16.1 0 21 1.8.5.2 1 .4 1.6.6 4.8 2 8.8 5.7 16.6 13 7.9 7.3 11.8 11 16.6 13 .5.2 1 .4 1.6.6 4.9 1.8 10.3 1.8 21 1.8H1140z" />
+                      <path
+                        d="M1140 30.8c28.3 0 42.4 0 51.2 8.8 8.8 8.8 8.8 23 8.8 51.3v338.6c0 28.4 0 42.5-8.8 51.3-8.8 8.8-22.9 8.8-51.2 8.8h-66.4c-10.1 0-15.1 0-19.2 1.2-9.8 2.9-17.5 10.6-20.4 20.4-1.2 4.1-1.2 9.2-1.2 19.3s0 15.2-1.2 19.3c-2.9 9.9-10.6 17.6-20.4 20.4-4.1 1.2-9.2 1.2-19.3 1.2H60c-28.3 0-42.4 0-51.2-8.8C0 554 0 539.9 0 511.5V60.2C0 31.8 0 17.6 8.8 8.8 17.6 0 31.7 0 60 0h417.1c10.7 0 16.1 0 21 1.8.5.2 1 .4 1.6.6 4.8 2 8.8 5.7 16.6 13 7.9 7.3 11.8 11 16.6 13 .5.2 1 .4 1.6.6 4.9 1.8 10.3 1.8 21 1.8H1140z" />
                     </clipPath>
                   </svg>
                 </div>
                 <div class="mc--child-2-bottom">
                   <span class="mc--spn" id="mc--para-1">BLACK OPS6 - M4A1</span>
-                  <p class="mc--para" id="mc--spn-1">Raven, a stealth operative, excels in silent takedowns, using advanced camouflage and precision, ideal for covert operations.</p>
+                  <p class="mc--para" id="mc--spn-1">Raven, a stealth operative, excels in silent takedowns, using
+                    advanced camouflage and precision, ideal for covert operations.</p>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="section6" class="view-main--6 rounded-3xl">
+      <div class="section6-wrapper">
+        <div class="s6-title-con rounded-2xl">
+          <h1>JOIN THE BATTLE</h1>
+        </div>
+        <div class="rounded-3xl" id="glass-container">
+          <div class="g-con-glass-con rounded-2xl shadow-lg shadow-[#00000043]">
+            <span class="former-title">CALL of DUTY — BLACK OPS6</span>
+            <div class="fromer-btn-con">
+              <button class="pre-btn shadow-lg">PRE ORDER</button>
+              <button class="pre-btn shadow-lg">VAULT EDITION</button>
             </div>
           </div>
         </div>
@@ -401,9 +445,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
     integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Draggable.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/js/loaders/SVGLoader.js"></script> -->
   <script src="script.js"></script>
 </body>
